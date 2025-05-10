@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './home.css';
-import Social from './social';
-import Data from './data';
+import Social from './Social';
+import Data from './Data';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollDown from './scrollDown';
