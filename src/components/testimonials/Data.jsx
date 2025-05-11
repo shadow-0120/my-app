@@ -1,6 +1,8 @@
+
 import Image1 from '../../assets/testimonial1.jpeg'
 import Image2 from '../../assets/testimonial2.jpeg';
 import Image3 from '../../assets/testimonial3.jpeg';
+import Image4 from '../../assets/testimonial4.jpeg';
 export const Data = [
   {
     id: 1,
@@ -26,4 +28,10 @@ export const Data = [
       "Professional and efficient work. Highly recommended for future projects.",
     rating: 3,
   },
+  {
+    id:4,
+    image: Image4,
+    title:"Rahim Fadel",
+    description:"A Great work that shows the great competency that you have!"
+  }
 ];
