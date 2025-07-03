@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './about.css';
-import AboutImg from '../../assets/about.jpg';
+import AboutImg from '../../assets/about.png';
 import CV from '../../assets/John-Cv.pdf';
 import Info from './Info';
 import gsap from 'gsap';
