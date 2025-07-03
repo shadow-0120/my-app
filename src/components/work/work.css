@@ -1,138 +1,176 @@
-.work__filters{
- display: flex;
- justify-content: center;
- align-items: center;
- column-gap: 0.75rem;
- margin-bottom: var(--mb-2);
+/* ======= MODERN FILTER BUTTONS ======= */
+.work__filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: var(--mb-3);
+  padding: 0.5rem;
+  position: relative;
 }
-.work__item{
-    cursor: pointer;
-    color: var(--title-color);
-    padding: 0.25rem 0.75rem;
-    font-weight: var(--font-medium);
-    border-radius: 0.5rem;
-    text-transform: capitalize;
-}
-.work__item:hover{
-    background: var(--title-color);
-    color: #fff;
-}   
 
+.work__filters::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+}
+
+.work__item {
+  cursor: pointer;
+  color: var(--title-color);
+  padding: 0.5rem 1.25rem;
+  font-weight: var(--font-medium);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: capitalize;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.work__item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--title-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.work__item:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.work__item:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.active-work {
+  background: var(--title-color);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.active-work:hover {
+  background: var(--title-color);
+}
+
+/* ======= MODERN WORK CONTAINER ======= */
 .work__container {
-    grid-template-columns: repeat(2, max-content);
-    gap: 3rem;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 1.5rem;
 }
 
+/* ======= MODERN CARD STYLE ======= */
 .work__card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 1rem;
-    width: 295px;
-    height: 100%;
-    cursor: pointer;
-    background-color: var(--container-color);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.work__card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+/* ======= IMAGE STYLE ======= */
 .work__img {
-    width: 100%;
-    height: 100%;
-    border-radius: 1rem;
-    transition: transform 0.5s ease, filter 0.5s ease;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
-
-.work__card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, transparent 30%, rgb(0, 0, 0));
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    border-radius: 1rem;
-}
-
-.work__title, .work__button {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(50px);
-    opacity: 0;
-    transition: 0.5s ease;
-    color: #fff;
-    z-index: 2;
+/* ======= CARD CONTENT ======= */
+.work__content {
+  padding: 1.25rem 1.5rem 1.5rem;
 }
 
 .work__title {
-    bottom: 70px;
-    margin-bottom: var(--mb-0-5);
-    font-size: var(--normal-font-size);
-    font-weight: var(--font-medium);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin: 1rem;
+  color: var(--title-color);
+  position: relative;
+  display: inline-block;
 }
 
+.work__title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: var(--title-color);
+  transition: width 0.3s ease;
+}
+
+.work__card:hover .work__title::after {
+  width: 100%;
+}
+
+/* ======= BUTTON ======= */
 .work__button {
-    bottom: 30px;
-    background: #00c9ff;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    font-size: var(--small-font-size);
-    font-weight: var(--font-medium);
-    text-decoration: none;
-    color: #fff;
-    transition: all 0.5s ease;
-}
-
-
-
-.work__button:hover {
-    background: #00a3ff;
-
-}
-.work__card:hover::before {
-    opacity: 1;
-}
-
-.work__card:hover .work__title,
-.work__card:hover .work__button {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-}
-.active-work {
-    background: var(--title-color);
-    color: #fff;
-}
-@media  screen and (max-width: 992px) {
-    .work__container{
-        grid-template-columns: repeat(2, max-content);
-    }
-    .work__container {
-        gap: 1.25rem;
-    }
+   display: inline-block;
     
-    .work__img{
-        margin-bottom: 0.75rem;
-    }
-    
+  margin-top: 1rem;
+  padding: 0.5rem 1.25rem;
+  background: var(--title-color);
+  color: #fff;
+  font-weight: var(--font-medium);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
+/* ======= RESPONSIVE DESIGN ======= */
+@media screen and (max-width: 992px) {
+  .work__container {
+    gap: 2rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
-    .work__container {
-        grid-template-columns: repeat( max-content);
-        gap: 1.25rem;   
-    }
-    
-    
-    
+  .work__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .work__img {
+    height: 200px;
+  }
 }
-@media screen and (max-width: 576px) {
-    .work__container {
-        grid-template-columns: 1fr;
-        
 
-    }       
-    .work__card{
-        width: 100%;
-    }
-    
-    
+@media screen and (max-width: 576px) {
+  .work__container {
+    grid-template-columns: 1fr;
+  }
+  
+  .work__filters {
+    gap: 0.5rem;
+  }
+  
+  .work__item {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
 }

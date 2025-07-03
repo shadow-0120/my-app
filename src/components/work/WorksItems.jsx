@@ -12,16 +12,24 @@ export default function WorksItems({ item }) {
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
     >
-      <img src={item.image} alt="" className="work__img" />
+      <img
+        src={item.image}
+        alt={item.title}
+        className="work__img"
+        loading="lazy"
+        decoding="async"
+      />
       <h3 className="work__title">{item.title}</h3>
-      <a
-        href={item.link}
-        className="work__button"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Demo
-      </a>
+      {item.link && (
+        <a
+          href={item.link}
+          className="work__button"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Demo
+        </a>
+      )}
     </motion.div>
   );
 }

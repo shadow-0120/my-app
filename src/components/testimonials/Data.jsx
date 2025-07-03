@@ -14,7 +14,7 @@ export const Data = [
   },
   {
     id: 2,
-    image: Image2,
+    image: Image2,    
     title: "AbdElghani Mahmoudi",
     description:
       "The collaboration was smooth and the final delivery exceeded expectations.",

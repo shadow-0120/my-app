@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 
 export default function Testimonials() {
-
+  
   const renderStars = (rating) => {
     const fullStars = Array(rating).fill("★"); 
     const emptyStars = Array(5 - rating).fill("☆"); 
