@@ -1,6 +1,6 @@
 import Work1 from "../../assets/work1.png";
 import Work2 from "../../assets/work2.png";
-// import Work3 from "../../assets/work1.png";
+import Work3 from "../../assets/work3.png";
 // import Work4 from "../../assets/work2.png";
 // import Work5 from "../../assets/work1.png";
 // import Work6 from "../../assets/work2.png";
@@ -20,13 +20,13 @@ export const projectsData = [
     link: "https://step-bs.vercel.app/",
     category: "web",
   },
-//   {
-//     id: 3,
-//     image: Work3,
-//     title: "Brand Identity",
-//     link: "https://example.com/project3",
-//     category: "design",
-//   },
+  {
+    id: 3,
+    image: Work3,
+    title: "Brand Identity",
+    link: "https://joker-main.vercel.app/",
+    category: "web",
+  },
 //   {
 //     id: 4,
 //     image: Work4,
