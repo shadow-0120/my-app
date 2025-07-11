@@ -23,7 +23,7 @@ export const projectsData = [
   {
     id: 3,
     image: Work3,
-    title: "Brand Identity",
+    title: "Joker Club Platform",
     link: "https://joker-main.vercel.app/",
     category: "web",
   },
